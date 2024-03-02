@@ -83,7 +83,7 @@ int main() {
     const unsigned int numOfExpenses = 20;
     float* expenses = new float[numOfExpenses];
 
-    srand(time(nullptr)); //TODO: Vprašaj kaje je to
+    srand(time(nullptr));
 
     bool running = true;
     int selection;

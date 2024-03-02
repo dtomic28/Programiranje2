@@ -11,8 +11,6 @@ void getPossibleCarsByPart(const int *inputs, int *output) {
     output[0] = inputs[0] / 4;
     output[1] = inputs[1] / 1;
     output[2] = inputs[2] / 2;
-
-
 }
 
 void getLeftovers(const int *inputs, int carsBuilt, int *leftovers) {
@@ -84,8 +82,6 @@ int main() {
     cout << "Num of wheels: " << outputLeftovers[0] << endl;
     cout << "Num of bodies: " << outputLeftovers[1] << endl;
     cout << "Num of mirrors: " << outputLeftovers[2] << endl;
-
-    //TODO: parts needed: max assembled cars * required parts - leftoverParts
 
     cout << "We need: " << endl;
     cout << "Num of wheels: " << outputAditionalParts[0] << endl;
