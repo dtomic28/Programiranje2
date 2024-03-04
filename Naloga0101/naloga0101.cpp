@@ -7,7 +7,6 @@
 #include <random>
 #include <iomanip>
 
-
 using namespace std;
 
 void menu() {
@@ -20,9 +19,20 @@ void menu() {
     cout << "4 ... PRINT AVG. EXPENSE COST" << endl;
     cout << "5 ... PRINT THE CHEAPEST EXPENSE" << endl;
     cout << "6 ... PRINT HOW MANY TIMES THE EXPENSE WAS OVER 100" << endl;
+    cout << "7 ... SORT ARRAY" << endl;
     cout << "0 ... EXIT" << endl;
     cout << "============================" << endl;
     cout << "Select: ";
+}
+
+void sort(float* array, const unsigned int size){
+    for(int i = 0; i<size; i++){
+        for(int j = i; j<size; j++){
+            if(array[i] < array[j]){
+                swap(array[i], array[j]);
+            }
+        }
+    }
 }
 
 int myRound(float num){
@@ -109,6 +119,9 @@ int main() {
                 break;
             case 6:
                 cout << "Expenses over 100: " << howManyOverAHunderd(expenses, numOfExpenses) << endl;
+                break;
+            case 7:
+                sort(expenses, numOfExpenses);
                 break;
             case 0:
                 running = false;

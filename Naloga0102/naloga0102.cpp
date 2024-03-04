@@ -43,6 +43,14 @@ int getTheoreticalCarsBuilt(const int *input) {
     return input[maxIndex];
 }
 
+float caluclateAditionalPartsPrice(const int* additionalParts){
+    float result = 0;
+    result += (additionalParts[0] * 0.30f);
+    result += (additionalParts[1] * 1.8f);
+    result += (additionalParts[2] * 0.15f);
+    return result;
+}
+
 int main() {
     int inputs[] = {0, 0, 0};
     int outputAssembledCars[] = {0, 0, 0};
@@ -71,6 +79,8 @@ int main() {
 
     } while (inputs[0] <= 0 || inputs[1] <= 0 || inputs[2] <= 0);
 
+    cout << endl;
+
     getPossibleCarsByPart(inputs, outputAssembledCars);
     builtCars = getPossibleCarsBuilt(outputAssembledCars);
     getLeftovers(inputs, builtCars, outputLeftovers);
@@ -82,11 +92,13 @@ int main() {
     cout << "Num of wheels: " << outputLeftovers[0] << endl;
     cout << "Num of bodies: " << outputLeftovers[1] << endl;
     cout << "Num of mirrors: " << outputLeftovers[2] << endl;
+    cout << endl;
 
     cout << "We need: " << endl;
     cout << "Num of wheels: " << outputAditionalParts[0] << endl;
     cout << "Num of bodies: " << outputAditionalParts[1] << endl;
     cout << "Num of mirrors: " << outputAditionalParts[2] << endl;
+    cout << "Price of additional parts: " << caluclateAditionalPartsPrice(outputAditionalParts) << "€" << endl;
 
     return 0;
 }
