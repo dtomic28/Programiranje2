@@ -3,6 +3,11 @@ project(Programiranje2)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(Naloga0101 Naloga0101/naloga0101.cpp) #Tukaj dodas header file v oklepaj npr: add_executable(Programiranje2 main.cpp main.h)
+add_executable(Naloga0101 Naloga01/Naloga0101/naloga0101.cpp) #Tukaj dodas header file v oklepaj npr: add_executable(Programiranje2 main.cpp main.h)
 
-add_executable(Naloga0102 Naloga0102/naloga0102.cpp)
+add_executable(Naloga0102 Naloga01/Naloga0102/naloga0102.cpp)
+add_executable(Naloga0201 Naloga02/Naloga0201/Event.cpp Naloga02/Naloga0201/Event.h
+        Naloga02/Naloga0201/naloga0201.cpp)
+add_executable(Naloga0202 Naloga02/Naloga0202/naloga0202.cpp
+        Naloga02/Naloga0202/Expense.cpp
+        Naloga02/Naloga0202/Expense.h)
