@@ -13,3 +13,5 @@ add_executable(Naloga0202 Naloga02/Naloga0202/naloga0202.cpp
         Naloga02/Naloga0202/Expense.h)
 add_executable(Naloga0301 Naloga03/Naloga0301/Date.cpp Naloga03/Naloga0301/Date.h
         Naloga03/Naloga0301/naloga0301.cpp)
+add_executable(Naloga0302 Naloga03/Naloga0302/TextUtility.cpp Naloga03/Naloga0302/TextUtility.h
+        Naloga03/Naloga0302/naloga0302.cpp)
