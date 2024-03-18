@@ -13,6 +13,14 @@ private:
     unsigned int year;
     constexpr static const int MaxDayByMonth[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     static const int MaxMonth = 12;
+public:
+    void setDay(unsigned int day);
+
+    void setMonth(unsigned int month);
+
+    void setYear(unsigned int year);
+
+private:
     static const int DaysInYear = 365;
 public:
     Date(unsigned int day, unsigned int month,unsigned int year);
@@ -24,6 +32,7 @@ public:
     static bool isLeapYear(unsigned int year);
     static unsigned int getDaysInMonth(unsigned int month, unsigned int year);
     static bool isDateValid(unsigned int day, unsigned int month, unsigned int year);
+    static Date parse(const std::string& dateStr);
 };
 
 

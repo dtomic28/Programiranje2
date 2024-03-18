@@ -7,7 +7,7 @@
 #include <string>
 #include <vector>
 
-class TextUtility {
+class TextUtility { //Temu se reče pure static class
 private:
     TextUtility();
 public:
@@ -16,6 +16,7 @@ public:
     static std::string capitalizeWords(const std::string& str);
     static std::vector<int> extractIntNumbers(const std::string& str);
     static unsigned int countSpacesInString(const std::string& str);
+    static std::string replace(const std::string &str, const std::string &searchStr, const std::string &replaceStr);
 };
 
 

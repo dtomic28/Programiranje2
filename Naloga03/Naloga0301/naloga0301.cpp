@@ -22,6 +22,9 @@ int main(){
     dates.emplace_back(29,2, 2024);
     cout << dates[3].toString() << endl;
 
+    dates.push_back(Date::parse("28.1.2024"));
+    cout << dates[4].toString() << endl;
+
     cout << Date::isLeapYear(2024) << endl;
 
     cout << Date::getDaysInMonth(2, 2024) << endl;

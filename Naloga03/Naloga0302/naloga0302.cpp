@@ -30,5 +30,9 @@ int main(){
     cout << endl;
     printVector(nums);
 
+    string test = "I love to read articles on read Favtutor.";
+
+    cout << TextUtility::replace(test, "read", "  ") << endl;
+
     return 0;
 }
