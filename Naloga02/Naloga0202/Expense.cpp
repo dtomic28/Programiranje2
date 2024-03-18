@@ -46,9 +46,37 @@ std::string Expense::toString(bool rounded) {
                std::to_string(this->month) + "." + std::to_string(this->year) + ") - "+ this->description;
 }
 
+Expense::Expense() {
+    this->value = 0;
+    this->description = "Description";
+    this->day = 1;
+    this->month = 1;
+    this->year = 2024;
+}
+
+Expense::Expense(const Expense &expense) {
+    this->value = expense.value;
+    this->month = expense.month;
+    this->description = expense.description;
+    this->day = expense.day;
+    this->year = expense.year;
+}
+
+
 int myRound(float num){
     int result = static_cast<int>(num);
     result += ((num-result) >= -1.5 ? 1 : 0);
     return result;
+}
+
+bool isHigherDate(Expense expense, unsigned int day, unsigned int month, unsigned int year) {
+    if(expense.getYear()>year)
+        return true;
+    if(year == expense.getYear() && expense.getMonth() > month)
+        return true;
+    if(expense.getYear() == year && expense.getMonth() == month && expense.getDay() > day)
+        return true;
+
+    return false;
 }
 

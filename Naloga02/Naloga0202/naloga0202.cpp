@@ -22,6 +22,7 @@ void menu() {
     cout << "5 ... PRINT THE CHEAPEST EXPENSE" << endl;
     cout << "6 ... PRINT HOW MANY TIMES THE EXPENSE WAS OVER 100" << endl;
     cout << "7 ... SORT ARRAY" << endl;
+    cout << "8 ... GET EXPENSES AFTER DATE" << endl;
     cout << "0 ... EXIT" << endl;
     cout << "============================" << endl;
     cout << "Select: ";
@@ -37,6 +38,15 @@ void sort(vector<Expense> &array) {
     }
 }
 
+void getExpensesOverDate(const vector<Expense> &expenses, vector<Expense> &expensesOverDate, unsigned int day,
+                         unsigned int month, unsigned int year) {
+    expensesOverDate.clear();
+    for (auto &expense: expenses) {
+        if (isHigherDate(expense, day, month, year))
+            expensesOverDate.push_back(expense);
+    }
+}
+
 float generateRandomFloatInRange(float min, float max) {
     return min + static_cast<float>(rand()) / (RAND_MAX / (max - min));
 }
@@ -44,8 +54,8 @@ float generateRandomFloatInRange(float min, float max) {
 void fillArray(vector<Expense> &array, const unsigned int size) {
     string description = "Nakup";
     for (unsigned int i = 0; i < size; i++) {
-        array.emplace_back(generateRandomFloatInRange(0.50, 150.00), int(generateRandomFloatInRange(1, 31)),
-                           int(generateRandomFloatInRange(1, 12)), 2024, description);
+        array.push_back(Expense(generateRandomFloatInRange(0.50, 150.00), int(generateRandomFloatInRange(1, 31)),
+                                int(generateRandomFloatInRange(1, 12)), 2024, description));
     }
 }
 
@@ -90,6 +100,8 @@ int howManyOverAHunderd(vector<Expense> array) {
 int main() {
     const unsigned int numOfExpenses = 20;
     vector<Expense> expenses;
+    vector<Expense> expensesOverDate;
+    unsigned int day, month, year;
 
     srand(time(nullptr));
 
@@ -120,6 +132,17 @@ int main() {
                 break;
             case 7:
                 sort(expenses);
+                break;
+            case 8:
+                cout << "Enter day: ";
+                cin >> day;
+                cout << "Enter month: ";
+                cin >> month;
+                cout << "Enter year: ";
+                cin >> year;
+                getExpensesOverDate(expenses, expensesOverDate, day, month, year);
+                cout << expensesOverDate.size();
+                printArray(expensesOverDate);
                 break;
             case 0:
                 running = false;
