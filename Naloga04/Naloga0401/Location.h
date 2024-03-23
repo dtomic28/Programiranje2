@@ -17,19 +17,19 @@ private:
 public:
     Location(const std::string &name, const std::string &street, const std::string &city, const std::string &country);
 
-    const std::string &getName() const;
+    [[nodiscard]] const std::string &getName() const;
     void setName(const std::string &name);
 
-    const std::string &getStreet() const;
+    [[nodiscard]] const std::string &getStreet() const;
     void setStreet(const std::string &street);
 
-    const std::string &getCity() const;
+    [[nodiscard]] const std::string &getCity() const;
     void setCity(const std::string &city);
 
-    const std::string &getCountry() const;
+    [[nodiscard]] const std::string &getCountry() const;
     void setCountry(const std::string &country);
 
-    std::string toString() const;
+    [[nodiscard]] std::string toString() const;
 };
 
 
