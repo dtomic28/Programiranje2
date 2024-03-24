@@ -19,4 +19,19 @@ add_executable(Naloga0401
         Naloga04/Naloga0401/Date.cpp Naloga04/Naloga0401/Date.h Naloga04/Naloga0401/Event.cpp Naloga04/Naloga0401/Event.h Naloga04/Naloga0401/Location.cpp Naloga04/Naloga0401/Location.h
         Naloga04/Naloga0401/EventOrganizer.cpp
         Naloga04/Naloga0401/EventOrganizer.h
+        Naloga04/Naloga0401/naloga0401.cpp
+        Naloga03/Naloga0302/TextUtility.h
+        Naloga03/Naloga0302/TextUtility.cpp
+)
+add_executable(Naloga0402
+        Naloga04/Naloga0402/Date.cpp Naloga04/Naloga0402/Date.h Naloga04/Naloga0402/Event.cpp Naloga04/Naloga0402/Event.h Naloga04/Naloga0402/Location.cpp Naloga04/Naloga0402/Location.h
+        Naloga04/Naloga0402/EventOrganizer.cpp
+        Naloga04/Naloga0402/EventOrganizer.h
+        Naloga04/Naloga0402/naloga0402.cpp
+        Naloga03/Naloga0302/TextUtility.h
+        Naloga03/Naloga0302/TextUtility.cpp
+        Naloga04/Naloga0402/Time.cpp
+        Naloga04/Naloga0402/Time.h
+        Naloga04/Naloga0402/DateTime.cpp
+        Naloga04/Naloga0402/DateTime.h
 )

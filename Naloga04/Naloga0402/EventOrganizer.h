@@ -34,6 +34,7 @@ public:
     bool sellTicket(int eventId);
 
     const std::vector<Event> &getEvents() const;
+    std::vector<Event> getEventsByStatus(EventStatus status) const;
 };
 
 

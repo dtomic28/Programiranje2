@@ -61,9 +61,4 @@ Event::Event() {
     this->description = "Description";
 }
 
-Event::Event(const Event &event) {
-    this->title = event.title;
-    this->price = event.price;
-    this->numTickets = event.numTickets;
-    this->description = event.description;
-}
+Event::Event(const Event &event) = default;

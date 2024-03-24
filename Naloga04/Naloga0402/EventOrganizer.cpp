@@ -63,3 +63,12 @@ std::string EventOrganizer::eventsToString() const {
 const std::vector<Event> &EventOrganizer::getEvents() const {
     return events;
 }
+
+std::vector<Event> EventOrganizer::getEventsByStatus(EventStatus status) const {
+    std::vector<Event> eventsByStatus;
+    for(auto &event: events){
+        if(event.getEventStatus() == status)
+            eventsByStatus.push_back(event);
+    }
+    return eventsByStatus;
+}

@@ -7,6 +7,8 @@
 #include <iostream>
 #include <cmath>
 
+unsigned int Event::MaxId = -1;
+
 std::string Event::getTitle() const {
     return this->title;
 }
@@ -28,8 +30,8 @@ void Event::setPrice(float price) {
 }
 
 std::string Event::toString() const {
-    return (this->title + " (" + std::to_string(this->price) + ") " + "Num of tickets: " +
-            std::to_string(this->numTickets) + " Description: " + this->description);
+    return ("Id: " + std::to_string(this->id) + "  " + this->title + " (" + std::to_string(this->price) + ") " + "Num of tickets: " +
+            std::to_string(this->numTickets) + " Age group: " + eventAgeGroupToString(this->ageGroup));
 }
 
 void Event::print() const {
@@ -40,9 +42,11 @@ void Event::setTitle(std::string &title) {
     this->title = title;
 }
 
-Event::Event() : id(-1), price(0), numTickets(0),
+Event::Event() : price(0), numTickets(0),
                  location(nullptr), date(), ageGroup(),
-                 title("Event") {}
+                 title("Event") {
+    this->id = ++MaxId;
+}
 
 Event::Event(const Event &event) = default;
 
@@ -62,10 +66,11 @@ void Event::setLocation(Location *location) {
     Event::location = location;
 }
 
-Event::Event(int id, const std::string &title, float price, unsigned int numTickets, Location *location,
+Event::Event(const std::string &title, float price, unsigned int numTickets, Location *location,
              const Date &date, EventAgeGroup ageGroup) : id(id), price(price), numTickets(numTickets),
                                                          location(location), date(date), ageGroup(ageGroup),
                                                          title(title) {
+    this->id = ++MaxId;
 
 }
 
@@ -81,6 +86,29 @@ int Event::getId() const {
     return this->id;
 }
 
-void Event::setId(int id) {
-    this->id = id;
+EventAgeGroup Event::getAgeGroup() const {
+    return ageGroup;
+}
+
+void Event::setAgeGroup(EventAgeGroup ageGroup) {
+    Event::ageGroup = ageGroup;
+}
+
+std::string eventAgeGroupToString(EventAgeGroup ageGroup) {
+    std::string result;
+    switch(ageGroup){
+        case Child:{
+            result = "Child";
+            break;
+        }case Adult:{
+            result = "Adult";
+            break;
+        }case Senior:{
+            result = "Senior";
+            break;
+        }case All:{
+            result = "All";
+        }
+    }
+    return result;
 }
