@@ -34,6 +34,7 @@ public:
     bool sellTicket(int eventId);
 
     const std::vector<Event> &getEvents() const;
+    std::vector<Event> findEventByLocation(const Location* location) const;
 };
 
 

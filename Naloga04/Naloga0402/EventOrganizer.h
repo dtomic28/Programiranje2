@@ -35,6 +35,7 @@ public:
 
     const std::vector<Event> &getEvents() const;
     std::vector<Event> getEventsByStatus(EventStatus status) const;
+    bool removeCompleatedEvents();
 };
 
 

@@ -63,3 +63,12 @@ std::string EventOrganizer::eventsToString() const {
 const std::vector<Event> &EventOrganizer::getEvents() const {
     return events;
 }
+
+std::vector<Event> EventOrganizer::findEventByLocation(const Location *location) const {
+    std::vector<Event> eventsByLocation;
+    for(auto &event : events){
+        if(event.getLocation() == location)
+            eventsByLocation.push_back(event);
+    }
+    return eventsByLocation;
+}

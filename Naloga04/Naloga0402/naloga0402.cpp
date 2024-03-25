@@ -112,6 +112,12 @@ int main(){
     for(auto &event : compleatedEvents)
         cout << event.toString() << endl;
 
+    cout << eventOrganizer.removeCompleatedEvents() << endl;
+
+    compleatedEvents = eventOrganizer.getEventsByStatus(EventStatus::Completed);
+    for(auto &event : compleatedEvents)
+        cout << event.toString() << endl;
+
     delete[] locationPtrArr;
     return 0;
 }
