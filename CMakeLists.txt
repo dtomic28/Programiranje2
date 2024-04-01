@@ -49,6 +49,19 @@ add_executable(Naloga0501
         Naloga05/Naloga0501/naloga0501.cpp
         Naloga03/Naloga0302/TextUtility.cpp
         Naloga03/Naloga0302/TextUtility.h)
-#add_executable(Naloga0502)
+add_executable(Naloga0502
+        Naloga05/Naloga0502/Bank.cpp
+        Naloga05/Naloga0502/Bank.h
+        Naloga05/Naloga0502/Account.cpp
+        Naloga05/Naloga0502/Account.h
+        Naloga05/Naloga0502/SavingsAccount.cpp
+        Naloga05/Naloga0502/SavingsAccount.h
+        Naloga05/Naloga0502/Person.cpp
+        Naloga05/Naloga0502/Person.h
+        Naloga05/Naloga0502/Date.cpp
+        Naloga05/Naloga0502/Date.h
+        Naloga05/Naloga0502/naloga0502.cpp
+        Naloga03/Naloga0302/TextUtility.cpp
+        Naloga03/Naloga0302/TextUtility.h)
 
 
