@@ -35,3 +35,20 @@ add_executable(Naloga0402
         Naloga04/Naloga0402/DateTime.cpp
         Naloga04/Naloga0402/DateTime.h
 )
+add_executable(Naloga0501
+        Naloga05/Naloga0501/Concert.cpp
+        Naloga05/Naloga0501/Concert.h
+        Naloga05/Naloga0501/Date.cpp
+        Naloga05/Naloga0501/Date.h
+        Naloga05/Naloga0501/Event.cpp
+        Naloga05/Naloga0501/Event.h
+        Naloga05/Naloga0501/EventOrganizer.cpp
+        Naloga05/Naloga0501/EventOrganizer.h
+        Naloga05/Naloga0501/Location.cpp
+        Naloga05/Naloga0501/Location.h
+        Naloga05/Naloga0501/naloga0501.cpp
+        Naloga03/Naloga0302/TextUtility.cpp
+        Naloga03/Naloga0302/TextUtility.h)
+#add_executable(Naloga0502)
+
+
