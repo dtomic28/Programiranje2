@@ -3,6 +3,7 @@
 //
 
 #include "SavingsAccount.h"
+#include <cmath>
 
 SavingsAccount::SavingsAccount(unsigned int number, double balance, Person* owner, double intrestRate)
     : Account(number, balance, owner)
@@ -23,7 +24,7 @@ void SavingsAccount::setIntrestRate(double intrestRate)
 
 bool SavingsAccount::makeWithdrawl(double amount)
 {
-    unsigned int differenceDays = abs(lastWithdrawlDate.getDaysSinceEpoch() - Date::getCurrentDate().getDaysSinceEpoch());
+    unsigned int differenceDays = std::abs((int) lastWithdrawlDate.getDaysSinceEpoch() - (int) Date::getCurrentDate().getDaysSinceEpoch());
     if (differenceDays >= 90)
     {
         lastWithdrawlDate = Date::getCurrentDate();

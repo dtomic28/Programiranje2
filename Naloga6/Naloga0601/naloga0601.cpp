@@ -3,6 +3,7 @@
 //
 #include <iostream>
 #include "EventOrganizer.h"
+#include "FinancialSponsor.h"
 
 #define LocationSize 10
 
@@ -61,7 +62,7 @@ void initLocations(Location* arr)
     arr[9].setStreet("Copacabana Beach");
 }
 
-void initEvents(EventOrganizer& eventOrganizer, Location* locations)
+void initEvents(EventOrganizer& eventOrganizer, Location* locations, FinancialSponsor** sponsors)
 {
     string str;
     auto* event = new Event();
@@ -72,6 +73,7 @@ void initEvents(EventOrganizer& eventOrganizer, Location* locations)
     str = "Pre halloween party";
     event->setTitle(str);
     event->setAgeGroup(EventAgeGroup::Adult);
+    event->addSponsor(sponsors[0]);
     eventOrganizer.addEvent(event);
 
     event = new Event();
@@ -81,10 +83,13 @@ void initEvents(EventOrganizer& eventOrganizer, Location* locations)
     event->setPrice(20.5f);
     str = "Spring Music Festival";
     event->setTitle(str);
+    event->addSponsor(sponsors[1]);
+    event->addSponsor(sponsors[2]);
+    event->addSponsor(sponsors[3]);
     eventOrganizer.addEvent(event);
 }
 
-void initConcerts(EventOrganizer& eventOrganizer, Location* locations)
+void initConcerts(EventOrganizer& eventOrganizer, Location* locations, FinancialSponsor** sponsors)
 {
     string str;
     auto* concert = new Concert();
@@ -97,6 +102,8 @@ void initConcerts(EventOrganizer& eventOrganizer, Location* locations)
     concert->setAgeGroup(EventAgeGroup::Adult);
     concert->setConcertType(ConcertType::Rock);
     concert->setPerformer("Mambo kings");
+    concert->addSponsor(sponsors[3]);
+
     eventOrganizer.addEvent(concert);
 
     concert = new Concert();
@@ -108,17 +115,36 @@ void initConcerts(EventOrganizer& eventOrganizer, Location* locations)
     concert->setTitle(str);
     concert->setPerformer("Martin Garrix");
     concert->setConcertType(ConcertType::Pop);
+    concert->addSponsor(sponsors[1]);
     eventOrganizer.addEvent(concert);
+}
+
+void initSponsors(FinancialSponsor** sponsors, int sponsorCount)
+{
+    // Example initialization of sponsors, assuming derived classes exist.
+    // For this example, let's assume we have a derived class "BasicSponsor" that implements Sponsor.
+
+    for (int i = 0; i < sponsorCount; ++i)
+    {
+        std::string name = "Sponsor_" + std::to_string(i + 1);
+        unsigned int years = (i % 5) + 1;  // Just an example, varies from 1 to 5 years.
+
+        // Assuming dynamic allocation to match with your design
+        // You'd replace "BasicSponsor" with whatever your derived class is
+        sponsors[i] = new FinancialSponsor(name, years, 100, name + "bank");
+    }
 }
 
 int main()
 {
     auto locationPtrArr = new Location[LocationSize];
     initLocations(locationPtrArr);
+    FinancialSponsor** sponsorPtrArr;
+    initSponsors(sponsorPtrArr, 5);
 
     EventOrganizer eventOrganizer("Event organizers Maribor", "www.spletna-stran.si");
-    initEvents(eventOrganizer, locationPtrArr);
-    initConcerts(eventOrganizer, locationPtrArr);
+    initEvents(eventOrganizer, locationPtrArr, sponsorPtrArr);
+    initConcerts(eventOrganizer, locationPtrArr, sponsorPtrArr);
 
     cout << eventOrganizer.toString() << endl;
 
