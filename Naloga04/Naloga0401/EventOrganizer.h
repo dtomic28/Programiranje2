@@ -8,7 +8,8 @@
 #include <vector>
 #include "Event.h"
 
-class EventOrganizer {
+class EventOrganizer
+{
 private:
     std::string name;
     std::string webAddress;
@@ -16,26 +17,26 @@ private:
 
     int findEventIndexById(int id) const;
     std::string eventsToString() const;
+
 public:
-    EventOrganizer(const std::string &name, const std::string &webAddress);
+    EventOrganizer(const std::string& name, const std::string& webAddress);
     EventOrganizer();
-    EventOrganizer(const EventOrganizer &eventOrganizer);
+    EventOrganizer(const EventOrganizer& eventOrganizer);
 
-    [[nodiscard]] const std::string &getName() const;
+    [[nodiscard]] const std::string& getName() const;
 
-    void setName(const std::string &name);
+    void setName(const std::string& name);
 
-    [[nodiscard]] const std::string &getWebAddress() const;
+    [[nodiscard]] const std::string& getWebAddress() const;
 
-    void setWebAddress(const std::string &webAddress);
+    void setWebAddress(const std::string& webAddress);
 
     void addEvent(const Event& event);
     [[nodiscard]] std::string toString() const;
     bool sellTicket(int eventId);
 
-    const std::vector<Event> &getEvents() const;
+    const std::vector<Event>& getEvents() const;
     std::vector<Event> findEventByLocation(const Location* location) const;
 };
 
-
-#endif //PROGRAMIRANJE2_EVENTORGANIZER_H
+#endif  // PROGRAMIRANJE2_EVENTORGANIZER_H

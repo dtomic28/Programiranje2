@@ -8,7 +8,8 @@
 #include "Date.h"
 #include "Location.h"
 
-enum EventAgeGroup{
+enum EventAgeGroup
+{
     All = 0,
     Child = 1,
     Adult = 2,
@@ -17,7 +18,8 @@ enum EventAgeGroup{
 
 std::string eventAgeGroupToString(EventAgeGroup ageGroup);
 
-class Event {
+class Event
+{
 private:
     int id;
     std::string title;
@@ -27,29 +29,30 @@ private:
     Location* location;
     EventAgeGroup ageGroup;
     static unsigned int MaxId;
+
 public:
-    Event(const std::string& title, float price, unsigned int numTickets, Location *location, const Date &date, EventAgeGroup ageGroup);
+    Event(const std::string& title, float price, unsigned int numTickets, Location* location, const Date& date, EventAgeGroup ageGroup);
     Event();
-    Event(const Event &event);
+    Event(const Event& event);
 
     [[nodiscard]] std::string getTitle() const;
-    [[nodiscard]] float getPrice() const ;
-    [[nodiscard]] unsigned int getNumTickets() const ;
-    [[nodiscard]] const Date &getDate() const;
-    [[nodiscard]] Location *getLocation() const;
+    [[nodiscard]] float getPrice() const;
+    [[nodiscard]] unsigned int getNumTickets() const;
+    [[nodiscard]] const Date& getDate() const;
+    [[nodiscard]] Location* getLocation() const;
     [[nodiscard]] int getId() const;
     [[nodiscard]] EventAgeGroup getAgeGroup() const;
 
     void setAgeGroup(EventAgeGroup ageGroup);
     void setTitle(std::string& title);
-    void setDate(const Date &date);
+    void setDate(const Date& date);
     void setPrice(float price);
     void setNumTickets(unsigned int numTickets);
-    void setLocation(Location *location);
+    void setLocation(Location* location);
 
     [[nodiscard]] std::string toString() const;
     void print() const;
     bool sellTicket(unsigned int numOfTickets = 1);
 };
 
-#endif //PROGRAMIRANJE2_EVENT_H
+#endif  // PROGRAMIRANJE2_EVENT_H

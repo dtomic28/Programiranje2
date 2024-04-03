@@ -11,16 +11,19 @@ string descriptions[] = {"Desc 1", "Desc 2", "Desc 3", "Desc 4", "Desc5"};
 const float prices[] = {4.00f, 10.00f, 149.99f, 50.00f, 5.00f};
 const unsigned int numOfTickets[] = {500, 1000, 5000, 10000, 300};
 
-void Free(Event *array[]) {
+void Free(Event* array[])
+{
     for (int i = 0; i < 7; i++)
         delete array[i];
 }
 
-int main() {
-    Event *events[7];
+int main()
+{
+    Event* events[7];
     string title;
 
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 5; i++)
+    {
         events[i] = new Event(titles[i], prices[i], numOfTickets[i], descriptions[i]);
         events[i]->print();
     }

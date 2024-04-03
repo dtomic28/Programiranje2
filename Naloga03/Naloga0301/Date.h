@@ -6,13 +6,15 @@
 #define PROGRAMIRANJE2_DATE_H
 #include <string>
 
-class Date {
+class Date
+{
 private:
     unsigned int day;
     unsigned int month;
     unsigned int year;
     constexpr static const int MaxDayByMonth[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     static const int MaxMonth = 12;
+
 public:
     void setDay(unsigned int day);
 
@@ -22,10 +24,11 @@ public:
 
 private:
     static const int DaysInYear = 365;
+
 public:
-    Date(unsigned int day, unsigned int month,unsigned int year);
+    Date(unsigned int day, unsigned int month, unsigned int year);
     Date();
-    Date(const Date &date);
+    Date(const Date& date);
 
     std::string toString() const;
 
@@ -35,5 +38,4 @@ public:
     static Date parse(const std::string& dateStr);
 };
 
-
-#endif //PROGRAMIRANJE2_DATE_H
+#endif  // PROGRAMIRANJE2_DATE_H

@@ -6,17 +6,20 @@
 #define PROGRAMIRANJE2_ACCOUNT_H
 #include "Person.h"
 
-class Account {
+class Account
+{
 private:
     Person* owner;
+
 protected:
     unsigned int number;
     double balance;
+
 public:
     Account(unsigned int number, double balance, Person* owner);
     virtual ~Account();
 
-    Person *getOwner() const;
+    Person* getOwner() const;
 
     unsigned int getNumber() const;
 
@@ -28,5 +31,4 @@ public:
     virtual std::string toString() const;
 };
 
-
-#endif //PROGRAMIRANJE2_ACCOUNT_H
+#endif  // PROGRAMIRANJE2_ACCOUNT_H

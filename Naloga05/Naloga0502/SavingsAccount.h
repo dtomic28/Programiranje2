@@ -7,12 +7,14 @@
 #include "Account.h"
 #include "Date.h"
 
-class SavingsAccount : public Account{
+class SavingsAccount : public Account
+{
 private:
     double intrestRate;
     Date lastWithdrawlDate;
+
 public:
-    SavingsAccount(unsigned int number, double balance, Person *owner, double intrestRate);
+    SavingsAccount(unsigned int number, double balance, Person* owner, double intrestRate);
 
     double getIntrestRate() const;
 
@@ -23,5 +25,4 @@ public:
     std::string toString() const override;
 };
 
-
-#endif //PROGRAMIRANJE2_SAVINGSACCOUNT_H
+#endif  // PROGRAMIRANJE2_SAVINGSACCOUNT_H

@@ -6,16 +6,18 @@
 #define PROGRAMIRANJE2_EVENT_H
 #include <string>
 
-class Event {
+class Event
+{
 private:
     std::string title;
     float price;
     unsigned int numTickets;
     std::string description;
+
 public:
     Event(std::string& title, float price, unsigned int numTickets, std::string& description);
     Event();
-    Event(const Event &event);
+    Event(const Event& event);
 
     std::string getTitle();
     float getPrice();
@@ -31,6 +33,4 @@ public:
     void print();
 };
 
-
-
-#endif //PROGRAMIRANJE2_EVENT_H
+#endif  // PROGRAMIRANJE2_EVENT_H

@@ -6,7 +6,8 @@
 
 using namespace std;
 
-void initPeople(Person* people){
+void initPeople(Person* people)
+{
     people[0].setFirstName("Alice");
     people[0].setLastName("Smith");
 
@@ -20,16 +21,21 @@ void initPeople(Person* people){
     people[3].setLastName("Jones");
 }
 
-int main(){
+int main()
+{
     Bank bank;
 
     Person people[4];
-    for(int i = 0; i<4; i++){
-        if(i%2 == 0){
-            auto acc = new Account(i+1, (i+1)*100, &people[i]);
+    for (int i = 0; i < 4; i++)
+    {
+        if (i % 2 == 0)
+        {
+            auto acc = new Account(i + 1, (i + 1) * 100, &people[i]);
             bank.addAccount(acc);
-        }else{
-            auto acc = new SavingsAccount(i+1, (i+1)*100, &people[i], double(i+1)/100);
+        }
+        else
+        {
+            auto acc = new SavingsAccount(i + 1, (i + 1) * 100, &people[i], double(i + 1) / 100);
             bank.addAccount(acc);
         }
     }

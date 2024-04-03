@@ -7,17 +7,19 @@
 
 #include <string>
 
-class Expense {
+class Expense
+{
 private:
     float value;
     unsigned int day, month, year;
     std::string description;
+
 public:
-    Expense(float value, unsigned int day, unsigned int month, unsigned int year, std::string &description);
+    Expense(float value, unsigned int day, unsigned int month, unsigned int year, std::string& description);
 
     Expense();
 
-    Expense(const Expense &expense);
+    Expense(const Expense& expense);
 
     float getValue();
 
@@ -37,4 +39,4 @@ public:
 int myRound(float num);
 bool isHigherDate(Expense expense, unsigned int day, unsigned int month, unsigned int year);
 
-#endif //PROGRAMIRANJE2_EXPENSE_H
+#endif  // PROGRAMIRANJE2_EXPENSE_H

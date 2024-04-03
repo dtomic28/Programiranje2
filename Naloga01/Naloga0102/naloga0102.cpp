@@ -7,43 +7,51 @@
 
 using namespace std;
 
-void getPossibleCarsByPart(const int *inputs, int *output) {
+void getPossibleCarsByPart(const int* inputs, int* output)
+{
     output[0] = inputs[0] / 4;
     output[1] = inputs[1] / 1;
     output[2] = inputs[2] / 2;
 }
 
-void getLeftovers(const int *inputs, int carsBuilt, int *leftovers) {
+void getLeftovers(const int* inputs, int carsBuilt, int* leftovers)
+{
     leftovers[0] = inputs[0] - (carsBuilt * 4);
     leftovers[1] = inputs[1] - carsBuilt;
     leftovers[2] = inputs[2] - (carsBuilt * 2);
 }
 
-void getAdditionalParts(int theoreticalAssembledCars, const int *leftovers, int *additionalParts) {
+void getAdditionalParts(int theoreticalAssembledCars, const int* leftovers, int* additionalParts)
+{
     additionalParts[0] = (theoreticalAssembledCars * 4) - leftovers[0];
-    additionalParts[1] = (theoreticalAssembledCars) - leftovers[1];
+    additionalParts[1] = (theoreticalAssembledCars) -leftovers[1];
     additionalParts[2] = (theoreticalAssembledCars * 2) - leftovers[2];
 }
 
-int getPossibleCarsBuilt(const int *input) {
+int getPossibleCarsBuilt(const int* input)
+{
     int minIndex = 0;
-    for (int i = 1; i < 3; i++) {
+    for (int i = 1; i < 3; i++)
+    {
         if (input[i] < input[minIndex])
             minIndex = i;
     }
     return input[minIndex];
 }
 
-int getTheoreticalCarsBuilt(const int *input) {
+int getTheoreticalCarsBuilt(const int* input)
+{
     int maxIndex = 0;
-    for (int i = 1; i < 3; i++) {
+    for (int i = 1; i < 3; i++)
+    {
         if (input[i] > input[maxIndex])
             maxIndex = i;
     }
     return input[maxIndex];
 }
 
-float caluclateAditionalPartsPrice(const int* additionalParts){
+float caluclateAditionalPartsPrice(const int* additionalParts)
+{
     float result = 0;
     result += (additionalParts[0] * 0.30f);
     result += (additionalParts[1] * 1.8f);
@@ -51,7 +59,8 @@ float caluclateAditionalPartsPrice(const int* additionalParts){
     return result;
 }
 
-int main() {
+int main()
+{
     int inputs[] = {0, 0, 0};
     int outputAssembledCars[] = {0, 0, 0};
     int outputLeftovers[] = {0, 0, 0};
@@ -60,8 +69,10 @@ int main() {
 
     int inputIndex = 0;
 
-    do {
-        switch (inputIndex) {
+    do
+    {
+        switch (inputIndex)
+        {
             case 0:
                 cout << "Input number of wheels: ";
                 break;
@@ -74,7 +85,7 @@ int main() {
         }
 
         cin >> inputs[inputIndex];
-        if(inputs[inputIndex] > 0)
+        if (inputs[inputIndex] > 0)
             inputIndex++;
 
     } while (inputs[0] <= 0 || inputs[1] <= 0 || inputs[2] <= 0);

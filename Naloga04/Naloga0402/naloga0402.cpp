@@ -8,7 +8,8 @@
 
 using namespace std;
 
-void initLocations(Location *arr){
+void initLocations(Location* arr)
+{
     arr[0].setCity("Maribor");
     arr[0].setCountry("Slovenia");
     arr[0].setName("Maribor Slovenia");
@@ -60,7 +61,8 @@ void initLocations(Location *arr){
     arr[9].setStreet("Copacabana Beach");
 }
 
-void initEvents(Event* events, Location* locations){
+void initEvents(Event* events, Location* locations)
+{
     string str;
 
     events[0].setStart(DateTime(Date::parse("28.10.2023"), Time(20, 0, 0)));
@@ -90,8 +92,8 @@ void initEvents(Event* events, Location* locations){
     events[2].setAgeGroup(EventAgeGroup::Senior);
 }
 
-
-int main(){
+int main()
+{
     auto locationPtrArr = new Location[LocationSize];
     initLocations(locationPtrArr);
     Event events[3];
@@ -109,13 +111,13 @@ int main(){
     cout << eventOrganizer.getEvents()[1].toString() << endl;
 
     vector<Event> compleatedEvents = eventOrganizer.getEventsByStatus(EventStatus::Completed);
-    for(auto &event : compleatedEvents)
+    for (auto& event : compleatedEvents)
         cout << event.toString() << endl;
 
     cout << eventOrganizer.removeCompleatedEvents() << endl;
 
     compleatedEvents = eventOrganizer.getEventsByStatus(EventStatus::Completed);
-    for(auto &event : compleatedEvents)
+    for (auto& event : compleatedEvents)
         cout << event.toString() << endl;
 
     delete[] locationPtrArr;

@@ -8,9 +8,11 @@
 #include "SavingsAccount.h"
 #include <vector>
 
-class Bank {
+class Bank
+{
 private:
     std::vector<Account*> accounts;
+
 public:
     Bank();
     ~Bank();
@@ -25,5 +27,4 @@ public:
     std::string toString() const;
 };
 
-
-#endif //PROGRAMIRANJE2_BANK_H
+#endif  // PROGRAMIRANJE2_BANK_H

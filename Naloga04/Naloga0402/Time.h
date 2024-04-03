@@ -6,15 +6,17 @@
 #define PROGRAMIRANJE2_TIME_H
 #include <string>
 
-class Time {
+class Time
+{
 private:
     unsigned int hours;
     unsigned int minutes;
     unsigned int seconds;
+
 public:
     Time(unsigned int hours, unsigned int minutes, unsigned int seconds);
     Time();
-    Time(const Time &time);
+    Time(const Time& time);
 
     [[nodiscard]] unsigned int getHours() const;
     [[nodiscard]] unsigned int getMinutes() const;
@@ -28,37 +30,47 @@ public:
     [[nodiscard]] unsigned int toSeconds() const;
     static bool isTimeValid(unsigned int hours, unsigned int minutes, unsigned int seconds);
 
-    bool operator<(const Time& other) const {
-        if (hours < other.hours) {
+    bool operator<(const Time& other) const
+    {
+        if (hours < other.hours)
+        {
             return true;
-        } else if (hours == other.hours && minutes < other.minutes) {
+        }
+        else if (hours == other.hours && minutes < other.minutes)
+        {
             return true;
-        } else if (hours == other.hours && minutes == other.minutes && seconds < other.seconds) {
+        }
+        else if (hours == other.hours && minutes == other.minutes && seconds < other.seconds)
+        {
             return true;
         }
         return false;
     }
 
-    bool operator>(const Time& other) const {
+    bool operator>(const Time& other) const
+    {
         return !(*this < other || *this == other);
     }
 
-    bool operator<=(const Time& other) const {
+    bool operator<=(const Time& other) const
+    {
         return (*this < other || *this == other);
     }
 
-    bool operator>=(const Time& other) const {
+    bool operator>=(const Time& other) const
+    {
         return !(*this < other);
     }
 
-    bool operator==(const Time& other) const {
+    bool operator==(const Time& other) const
+    {
         return hours == other.hours && minutes == other.minutes && seconds == other.seconds;
     }
 
-    bool operator!=(const Time& other) const {
+    bool operator!=(const Time& other) const
+    {
         return !(*this == other);
     }
 };
 
-
-#endif //PROGRAMIRANJE2_TIME_H
+#endif  // PROGRAMIRANJE2_TIME_H

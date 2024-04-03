@@ -8,7 +8,8 @@
 
 using namespace std;
 
-void initLocations(Location *arr){
+void initLocations(Location* arr)
+{
     arr[0].setCity("Maribor");
     arr[0].setCountry("Slovenia");
     arr[0].setName("Maribor Slovenia");
@@ -60,7 +61,8 @@ void initLocations(Location *arr){
     arr[9].setStreet("Copacabana Beach");
 }
 
-void initEvents(Event* events, Location* locations){
+void initEvents(Event* events, Location* locations)
+{
     string str;
     events[0].setDate(Date::parse("28.10.2023"));
     events[0].setLocation(&locations[0]);
@@ -70,7 +72,6 @@ void initEvents(Event* events, Location* locations){
     events[0].setTitle(str);
     events[0].setAgeGroup(EventAgeGroup::Adult);
 
-
     events[1].setDate(Date::parse("15.05.2024"));
     events[1].setLocation(&locations[2]);
     events[1].setNumTickets(120);
@@ -79,7 +80,8 @@ void initEvents(Event* events, Location* locations){
     events[1].setTitle(str);
 }
 
-void initConcerts(Concert *Concerts, Location* locations){
+void initConcerts(Concert* Concerts, Location* locations)
+{
     string str;
     Concerts[0].setDate(Date::parse("28.10.2023"));
     Concerts[0].setLocation(&locations[0]);
@@ -101,8 +103,8 @@ void initConcerts(Concert *Concerts, Location* locations){
     Concerts[1].setConcertType(ConcertType::Pop);
 }
 
-
-int main(){
+int main()
+{
     auto locationPtrArr = new Location[LocationSize];
     initLocations(locationPtrArr);
     Event events[2];
