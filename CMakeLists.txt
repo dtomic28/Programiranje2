@@ -68,3 +68,8 @@ add_executable(Naloga0601 Naloga6/Naloga0601/Concert.cpp Naloga6/Naloga0601/Conc
         Naloga03/Naloga0302/TextUtility.h
         Naloga6/Naloga0601/Sponsor.cpp
         Naloga6/Naloga0601/FinancialSponsor.cpp)
+add_executable(Naloga0602 Naloga6/Naloga0602/Graph.cpp Naloga6/Naloga0602/Graph.h
+        Naloga6/Naloga0602/PrintUtility.cpp
+        Naloga6/Naloga0602/Histogram.cpp
+        Naloga6/Naloga0602/Histogram.h
+        Naloga6/Naloga0602/naloga0602.cpp)
