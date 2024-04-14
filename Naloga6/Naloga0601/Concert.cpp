@@ -66,5 +66,6 @@ std::string Concert::concertTypeToString(ConcertType concertType)
     }
     return "";
 }
+Concert::~Concert() = default;
 
 Concert::Concert(const Concert& Concert) = default;

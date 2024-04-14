@@ -30,3 +30,8 @@ FinancialSponsor::FinancialSponsor()
     , moneyDonated(0)
 {
 }
+std::string FinancialSponsor::getPromoText() const
+{
+    return "Sponsor " + name + " has succesfully donated: " + std::to_string(moneyDonated) + "€";
+}
+FinancialSponsor::~FinancialSponsor() = default;

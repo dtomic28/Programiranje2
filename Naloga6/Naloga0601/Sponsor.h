@@ -21,6 +21,7 @@ public:
 
     virtual ~Sponsor();
     virtual float calculateScore() const = 0;
+    virtual std::string getPromoText() const = 0;
     virtual std::string toString() const;
     const std::string& getName() const;
     unsigned int getYearsOfSponsorship() const;

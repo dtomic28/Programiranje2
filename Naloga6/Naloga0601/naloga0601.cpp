@@ -4,6 +4,7 @@
 #include <iostream>
 #include "EventOrganizer.h"
 #include "FinancialSponsor.h"
+#include "SlowFoodExpirience.h"
 
 #define LocationSize 10
 
@@ -106,31 +107,26 @@ void initConcerts(EventOrganizer& eventOrganizer, Location* locations, Financial
 
     eventOrganizer.addEvent(concert);
 
-    concert = new Concert();
-    concert->setDate(Date::parse("15.05.2024"));
-    concert->setLocation(&locations[2]);
-    concert->setNumTickets(120);
-    concert->setPrice(20.5f);
+    auto* slowFoodExpirience = new SlowFoodExpirience();
+    slowFoodExpirience->setDate(Date::parse("15.05.2024"));
+    slowFoodExpirience->setLocation(&locations[2]);
+    slowFoodExpirience->setNumTickets(120);
+    slowFoodExpirience->setPrice(20.5f);
     str = "Spring Music Festival concert";
-    concert->setTitle(str);
-    concert->setPerformer("Martin Garrix");
-    concert->setConcertType(ConcertType::Pop);
-    concert->addSponsor(sponsors[1]);
-    eventOrganizer.addEvent(concert);
+    slowFoodExpirience->setTitle(str);
+    slowFoodExpirience->addSponsor(sponsors[1]);
+    slowFoodExpirience->setCook("Ljubo bohinc");
+    slowFoodExpirience->setNumMeals(1000);
+    eventOrganizer.addEvent(slowFoodExpirience);
 }
 
 void initSponsors(FinancialSponsor** sponsors, int sponsorCount)
 {
-    // Example initialization of sponsors, assuming derived classes exist.
-    // For this example, let's assume we have a derived class "BasicSponsor" that implements Sponsor.
-
     for (int i = 0; i < sponsorCount; ++i)
     {
         std::string name = "Sponsor_" + std::to_string(i + 1);
-        unsigned int years = (i % 5) + 1;  // Just an example, varies from 1 to 5 years.
+        unsigned int years = (i % 5) + 1;
 
-        // Assuming dynamic allocation to match with your design
-        // You'd replace "BasicSponsor" with whatever your derived class is
         sponsors[i] = new FinancialSponsor(name, years, 100, name + "bank");
     }
 }
@@ -149,4 +145,5 @@ int main()
     cout << eventOrganizer.toString() << endl;
 
     delete[] locationPtrArr;
+    delete[] sponsorPtrArr;
 }

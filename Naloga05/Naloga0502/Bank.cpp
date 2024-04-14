@@ -45,14 +45,7 @@ bool Bank::makeWithdrawlOnAccount(double amount, unsigned int accountNumber)
     {
         if (account->getNumber() == accountNumber)
         {
-            if (dynamic_cast<SavingsAccount*>(account))
-            {
-                result = dynamic_cast<SavingsAccount*>(account)->makeWithdrawl(amount);
-            }
-            else
-            {
-                result = account->makeWithdrawl(amount);
-            }
+            result = account->makeWithdrawl(amount);
             break;
         }
     }
@@ -77,7 +70,7 @@ std::string Bank::toString() const
 
     for (auto& acc : accounts)
     {
-        result += dynamic_cast<SavingsAccount*>(acc) ? dynamic_cast<SavingsAccount*>(acc)->toString() : acc->toString() + "\n";
+        result += acc->toString() + "\n";
     }
 
     return result;

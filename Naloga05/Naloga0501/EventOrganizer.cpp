@@ -73,14 +73,7 @@ std::string EventOrganizer::eventsToString() const
     std::string result = "{\n";
     for (auto event : events)
     {
-        if (dynamic_cast<Concert*>(event))
-        {
-            result.append(dynamic_cast<Concert*>(event)->toString() + ", ");
-        }
-        else
-        {
-            result.append(event->toString() + ", ");
-        }
+        result.append(event->toString() + ", ");
     }
     result += "}";
     return result;

@@ -36,6 +36,8 @@ public:
 
     ConcertType getConcertType() const;
 
+    ~Concert();
+
     void setConcertType(ConcertType concertType);
 
     const std::string& getPerformer() const;

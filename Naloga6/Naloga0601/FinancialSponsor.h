@@ -17,6 +17,9 @@ public:
     FinancialSponsor();
     FinancialSponsor(const FinancialSponsor& financialSponsor);
 
+    ~FinancialSponsor();
+
+    std::string getPromoText() const override;
     float calculateScore() const override;
     std::string toString() const override;
 };
