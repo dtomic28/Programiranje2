@@ -9,6 +9,7 @@
 #include <sstream>
 #include <random>
 #include <string>
+#include <stdexcept>
 
 template <typename T>
 void fillDefault(std::vector<T>& vec, int n)
@@ -76,6 +77,21 @@ std::vector<int> toInt(const std::vector<T>& vec)
         }
     }
     return intVec;
+}
+
+template <typename T>
+std::vector<T> mergeVectors(std::vector<std::vector<T>> vec)
+{
+    std::vector<T> result;
+
+    for (int i = 0; i < vec.size(); i++)
+    {
+        for (int j = 0; j < vec[i].size(); j++)
+        {
+            result.push_back(vec[i][j]);
+        }
+    }
+    return result;
 }
 
 #endif  // PROGRAMIRANJE2_VECTORUTIL_H

@@ -30,5 +30,20 @@ int main()
     cout << " --- Default generator of 3 objects --- " << endl;
     fillDefault(listInt, 3);
     print(listInt);
+
+    vector<vector<int>> vecVec;
+    vector<int> vec;
+    fillDefault(vec, 5);
+    vecVec.push_back(vec);
+    vec.clear();
+    fillDefault(vec, 5);
+    vecVec.push_back(vec);
+    vec.clear();
+    fillDefault(vec, 5);
+    vecVec.push_back(vec);
+    vec.clear();
+    vec = mergeVectors(vecVec);
+    print(vec);
+
     return 0;
 }

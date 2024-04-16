@@ -91,3 +91,4 @@ add_executable(Naloga0602 Naloga6/Naloga0602/Graph.cpp Naloga6/Naloga0602/Graph.
 add_executable(Naloga0701 Naloga7/Naloga0701/Point.cpp Naloga7/Naloga0701/Point.h Naloga7/Naloga0701/naloga0701.cpp
         Naloga7/Naloga0701/VectorUtil.h
 )
+add_executable(Naloga0702 Naloga7/Naloga0702/naloga0702.cpp Naloga7/Naloga0702/Point.cpp Naloga7/Naloga0702/Point.h Naloga7/Naloga0702/VectorUtil.h)
