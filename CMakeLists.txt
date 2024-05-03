@@ -65,30 +65,32 @@ add_executable(Naloga0502
         Naloga03/Naloga0302/TextUtility.h)
 
 add_executable(Naloga0601
-        Naloga6/Naloga0601/Concert.cpp
-        Naloga6/Naloga0601/Concert.h
-        Naloga6/Naloga0601/Date.cpp
-        Naloga6/Naloga0601/Date.h
-        Naloga6/Naloga0601/Event.cpp
-        Naloga6/Naloga0601/Event.h
-        Naloga6/Naloga0601/EventOrganizer.cpp
-        Naloga6/Naloga0601/EventOrganizer.h
-        Naloga6/Naloga0601/Location.cpp
-        Naloga6/Naloga0601/Location.h
-        Naloga6/Naloga0601/naloga0601.cpp
+        Naloga06/Naloga0601/Concert.cpp
+        Naloga06/Naloga0601/Concert.h
+        Naloga06/Naloga0601/Date.cpp
+        Naloga06/Naloga0601/Date.h
+        Naloga06/Naloga0601/Event.cpp
+        Naloga06/Naloga0601/Event.h
+        Naloga06/Naloga0601/EventOrganizer.cpp
+        Naloga06/Naloga0601/EventOrganizer.h
+        Naloga06/Naloga0601/Location.cpp
+        Naloga06/Naloga0601/Location.h
+        Naloga06/Naloga0601/naloga0601.cpp
         Naloga03/Naloga0302/TextUtility.cpp
         Naloga03/Naloga0302/TextUtility.h
-        Naloga6/Naloga0601/Sponsor.cpp
-        Naloga6/Naloga0601/FinancialSponsor.cpp
-        Naloga6/Naloga0601/SlowFoodExpirience.cpp
-        Naloga6/Naloga0601/SlowFoodExpirience.h
+        Naloga06/Naloga0601/Sponsor.cpp
+        Naloga06/Naloga0601/FinancialSponsor.cpp
+        Naloga06/Naloga0601/SlowFoodExpirience.cpp
+        Naloga06/Naloga0601/SlowFoodExpirience.h
 )
-add_executable(Naloga0602 Naloga6/Naloga0602/Graph.cpp Naloga6/Naloga0602/Graph.h
-        Naloga6/Naloga0602/PrintUtility.cpp
-        Naloga6/Naloga0602/Histogram.cpp
-        Naloga6/Naloga0602/Histogram.h
-        Naloga6/Naloga0602/naloga0602.cpp)
-add_executable(Naloga0701 Naloga7/Naloga0701/Point.cpp Naloga7/Naloga0701/Point.h Naloga7/Naloga0701/naloga0701.cpp
-        Naloga7/Naloga0701/VectorUtil.h
+add_executable(Naloga0602 Naloga06/Naloga0602/Graph.cpp Naloga06/Naloga0602/Graph.h
+        Naloga06/Naloga0602/PrintUtility.cpp
+        Naloga06/Naloga0602/Histogram.cpp
+        Naloga06/Naloga0602/Histogram.h
+        Naloga06/Naloga0602/naloga0602.cpp)
+add_executable(Naloga0701 Naloga07/Naloga0701/Point.cpp Naloga07/Naloga0701/Point.h Naloga07/Naloga0701/naloga0701.cpp
+        Naloga07/Naloga0701/VectorUtil.h
 )
-add_executable(Naloga0702 Naloga7/Naloga0702/naloga0702.cpp Naloga7/Naloga0702/Point.cpp Naloga7/Naloga0702/Point.h Naloga7/Naloga0702/VectorUtil.h)
+add_executable(Naloga0702 Naloga07/Naloga0702/naloga0702.cpp Naloga07/Naloga0702/Point.cpp Naloga07/Naloga0702/Point.h Naloga07/Naloga0702/VectorUtil.h)
+add_executable(Naloga0801 Naloga08/Naloga0801/naloga0801.cpp Naloga08/Naloga0801/Time.cpp Naloga08/Naloga0801/Time.h
+        Naloga08/Naloga0801/PriorityQueue.h)
