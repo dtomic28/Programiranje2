@@ -94,3 +94,7 @@ add_executable(Naloga0701 Naloga07/Naloga0701/Point.cpp Naloga07/Naloga0701/Poin
 add_executable(Naloga0702 Naloga07/Naloga0702/naloga0702.cpp Naloga07/Naloga0702/Point.cpp Naloga07/Naloga0702/Point.h Naloga07/Naloga0702/VectorUtil.h)
 add_executable(Naloga0801 Naloga08/Naloga0801/naloga0801.cpp Naloga08/Naloga0801/Time.cpp Naloga08/Naloga0801/Time.h
         Naloga08/Naloga0801/PriorityQueue.h)
+add_executable(Naloga0802 Naloga08/Naloga0802/naloga0802.cpp
+        Naloga08/Naloga0802/CircularLinkedList.h
+        Naloga08/Naloga0802/Node.h
+)
