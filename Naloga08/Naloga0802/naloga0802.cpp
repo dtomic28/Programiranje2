@@ -16,6 +16,7 @@ int main()
     // Testing add() method
     myList.add(5);
     myList.add(10);
+    myList.add(10);
     myList.add(15);
 
     // Testing getSize() method
@@ -25,7 +26,9 @@ int main()
     try
     {
         std::cout << "Value at index 1: " << myList.at(1) << std::endl;
-        std::cout << "Value at index 3: " << myList.at(3) << std::endl;  // This should throw an exception
+        myList.removeAt(3);
+        std::cout << myList.getSize() << endl;
+        std::cout << myList.at(3);
     }
     catch (const std::out_of_range& e)
     {

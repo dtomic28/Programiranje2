@@ -2,6 +2,7 @@
 #define TASK0302_TIME_H
 
 #include <iostream>
+#include <ostream>
 
 class Time
 {
@@ -25,16 +26,21 @@ public:
     unsigned int toSeconds() const;
 
     std::string toString() const;
-    
+
     bool operator<(const Time& other) const
     {
         return this->toSeconds() < other.toSeconds();
     }
 
-    // Dodatek: Operator za primerjavo več kot
     bool operator>(const Time& other) const
     {
         return this->toSeconds() > other.toSeconds();
+    }
+
+    friend std::ostream& operator<<(std::ostream& os, const Time& time)
+    {
+        os << time.toString();
+        return os;
     }
 };
 

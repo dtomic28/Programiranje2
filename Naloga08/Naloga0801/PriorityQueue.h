@@ -7,6 +7,8 @@
 #include <vector>
 #include <stdexcept>
 #include <algorithm>
+#include <memory>
+#include "time.h"
 
 enum class Priority
 {
@@ -25,6 +27,11 @@ public:
     PriorityQueue()
     {
         indexNextHigh = 0;
+    }
+
+    ~PriorityQueue()
+    {
+        values.clear();
     }
 
     bool isEmpty() const
@@ -65,6 +72,27 @@ public:
 
         return *max_element(values.begin(), values.end());
     }
+
+    void print() const
+    {
+        std::cout << "{ ";
+        for (T item : values)
+        {
+            std::cout << item << " ";
+        }
+        std::cout << "}" << std::endl;
+    }
 };
+
+template <>
+void PriorityQueue<std::shared_ptr<Time>>::print() const
+{
+    std::cout << "{ ";
+    for (auto item : values)
+    {
+        std::cout << *item.get() << " ";
+    }
+    std::cout << "}" << std::endl;
+}
 
 #endif  // PROGRAMIRANJE2_PRIORITYQUEUE_H

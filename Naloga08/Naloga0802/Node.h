@@ -18,9 +18,9 @@ private:
 
 public:
     Node(T Value, NodePtr next)
-        : value(value)
-        , next(next)
     {
+        this->value = Value;
+        this->next = next;
     }
 
     ~Node()

@@ -28,6 +28,7 @@ public:
         while (current != nullptr)
         {
             NodePtr next = current->getNext();
+            current->setNext(nullptr);
             current.reset();
             current = next;
         }
@@ -48,16 +49,18 @@ public:
     void add(T value)
     {
         count++;
-        NodePtr temp = std::make_shared<Node<T>>(value, nullptr);
+        NodePtr temp = std::shared_ptr<Node<T>>(new Node<T>(value, nullptr));
         if (head == nullptr && tail == nullptr)
         {
             head = temp;
             tail = temp;
+            tail->setNext(temp);
         }
         else
         {
             tail->setNext(temp);
             tail = temp;
+            tail->setNext(head);
         }
     }
 
@@ -74,6 +77,35 @@ public:
             current = current->getNext();
         }
         return current->getValue();
+    }
+
+    void removeAt(unsigned int index)
+    {
+        if (index >= count)
+            throw std::out_of_range("Index larger than linked list");
+        NodePtr current = head;
+        NodePtr prev, after;
+        for (unsigned int i = 0; i < index; ++i)
+        {
+            if (!current)
+                throw std::out_of_range("Index larger than linked list");
+            current = current->getNext();
+            if (i == index - 2)
+            {
+                prev = current;
+            }
+        }
+        if (index != count - 1)
+        {
+            after = current->getNext();
+            prev->setNext(after);
+        }
+        else
+        {
+            prev->setNext(nullptr);
+        }
+        current.reset();
+        count--;
     }
 };
 
