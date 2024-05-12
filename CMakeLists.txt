@@ -98,3 +98,14 @@ add_executable(Naloga0802 Naloga08/Naloga0802/naloga0802.cpp
         Naloga08/Naloga0802/CircularLinkedList.h
         Naloga08/Naloga0802/Node.h
 )
+add_executable(Naloga0901 Naloga09/Naloga0901/naloga0901.cpp
+        Naloga09/Naloga0901/Matrix.h)
+add_executable(Naloga0902 Naloga09/Naloga0902/naloga0902.cpp
+        Naloga09/Naloga0902/ReferenceCounter.cpp
+        Naloga09/Naloga0902/ReferenceCounter.h
+        Naloga09/Naloga0902/SmartPointer.h
+        Naloga09/Naloga0902/Date.cpp
+        Naloga09/Naloga0902/Date.h
+        Naloga03/Naloga0302/TextUtility.cpp
+        Naloga03/Naloga0302/TextUtility.h
+)
