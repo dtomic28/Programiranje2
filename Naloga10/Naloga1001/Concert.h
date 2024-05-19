@@ -47,4 +47,17 @@ public:
 
     static std::string concertTypeToString(ConcertType concertType);
 };
+
+class PrintIfConcert
+{
+public:
+    void operator()(Event* e)
+    {
+        if (dynamic_cast<Concert*>(e))
+        {
+            std::cout << e->toString() << std::endl;
+        }
+    }
+};
+
 #endif  // PROGRAMIRANJE2_CONCERT_H

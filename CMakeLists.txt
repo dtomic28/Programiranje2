@@ -109,3 +109,16 @@ add_executable(Naloga0902 Naloga09/Naloga0902/naloga0902.cpp
         Naloga03/Naloga0302/TextUtility.cpp
         Naloga03/Naloga0302/TextUtility.h
 )
+add_executable(Naloga1001 Naloga10/Naloga1001/naloga1001.cpp
+        Naloga10/Naloga1001/Concert.cpp
+        Naloga10/Naloga1001/Concert.h
+        Naloga10/Naloga1001/Date.cpp
+        Naloga10/Naloga1001/Date.h
+        Naloga10/Naloga1001/Event.cpp
+        Naloga10/Naloga1001/Event.h
+        Naloga10/Naloga1001/EventOrganizer.cpp
+        Naloga10/Naloga1001/EventOrganizer.h
+        Naloga10/Naloga1001/Location.cpp
+        Naloga10/Naloga1001/Location.h
+        Naloga03/Naloga0302/TextUtility.cpp
+        Naloga03/Naloga0302/TextUtility.h)
