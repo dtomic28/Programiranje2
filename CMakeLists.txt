@@ -122,3 +122,14 @@ add_executable(Naloga1001 Naloga10/Naloga1001/naloga1001.cpp
         Naloga10/Naloga1001/Location.h
         Naloga03/Naloga0302/TextUtility.cpp
         Naloga03/Naloga0302/TextUtility.h)
+add_executable(Naloga1101 Naloga11/Naloga1101/naloga1101.cpp
+        Naloga11/Naloga1101/Sensor.cpp
+        Naloga11/Naloga1101/Sensor.h
+        Naloga11/Naloga1101/DuplicatedSensorIdException.cpp
+        Naloga11/Naloga1101/DuplicatedSensorIdException.h
+        Naloga11/Naloga1101/TemperatureSensor.cpp
+        Naloga11/Naloga1101/TemperatureSensor.h
+        Naloga11/Naloga1101/TemperatureSensorGPS.cpp
+        Naloga11/Naloga1101/TemperatureSensorGPS.h
+        Naloga11/Naloga1101/SensorHub.cpp
+        Naloga11/Naloga1101/SensorHub.h)
