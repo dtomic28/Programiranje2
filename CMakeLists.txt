@@ -133,3 +133,18 @@ add_executable(Naloga1101 Naloga11/Naloga1101/naloga1101.cpp
         Naloga11/Naloga1101/TemperatureSensorGPS.h
         Naloga11/Naloga1101/SensorHub.cpp
         Naloga11/Naloga1101/SensorHub.h)
+
+add_executable(Naloga1102 Naloga11/Naloga1102/Naloga1102.cpp
+        Naloga11/Naloga1102/Sensor.cpp
+        Naloga11/Naloga1102/Sensor.h
+        Naloga11/Naloga1102/DuplicatedSensorIdException.cpp
+        Naloga11/Naloga1102/DuplicatedSensorIdException.h
+        Naloga11/Naloga1102/TemperatureSensor.cpp
+        Naloga11/Naloga1102/TemperatureSensor.h
+        Naloga11/Naloga1102/TemperatureSensorGPS.cpp
+        Naloga11/Naloga1102/TemperatureSensorGPS.h
+        Naloga11/Naloga1102/SensorHub.cpp
+        Naloga11/Naloga1102/SensorHub.h
+        Naloga11/Naloga1102/Log.cpp
+        Naloga11/Naloga1102/Log.h)
+target_compile_features(Naloga1102 PUBLIC cxx_std_20)
